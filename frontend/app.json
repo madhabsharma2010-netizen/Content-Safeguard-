@@ -1,42 +1,54 @@
 {
   "expo": {
-    "name": "frontend",
-    "slug": "frontend",
+    "name": "Content Safeguard Ultra",
+    "slug": "content-safeguard-ultra",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
-    "scheme": "frontend",
-    "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#007AFF"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.contentsafeguard.ultra",
+      "buildNumber": "1.0.0"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#000"
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#007AFF"
       },
-      "edgeToEdgeEnabled": true
+      "package": "com.contentsafeguard.ultra",
+      "versionCode": 1,
+      "permissions": [
+        "INTERNET",
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
     },
     "web": {
-      "bundler": "metro",
-      "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
     },
     "plugins": [
       "expo-router",
       [
-        "expo-splash-screen",
+        "expo-image-picker",
         {
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#000"
+          "photosPermission": "Allow Content Safeguard to access your photos for content analysis.",
+          "cameraPermission": "Allow Content Safeguard to access your camera for content analysis."
         }
       ]
     ],
-    "experiments": {
-      "typedRoutes": true
-    }
+    "scheme": "content-safeguard-ultra",
+    "description": "Ultra-Accurate AI-Powered Content Monitoring & Filtering System. Protect yourself from fake news, inappropriate content, and harmful material across all social media platforms with 95%+ accuracy.",
+    "githubUrl": "https://github.com/your-username/content-safeguard-ultra"
   }
 }
