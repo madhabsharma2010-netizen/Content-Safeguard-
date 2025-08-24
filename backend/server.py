@@ -552,7 +552,6 @@ async def ultra_analyze_content(request: ContentAnalysisRequest):
         settings_doc = await db.advanced_filter_settings.find_one({"user_id": "default_user"})
         if settings_doc:
             settings_doc.pop("_id", None)
-            from server import AdvancedFilterSettings
             user_settings = type('Settings', (), settings_doc)()
             user_settings.custom_keywords = settings_doc.get("custom_keywords", [])
             user_settings.strictness_level = settings_doc.get("strictness_level", "moderate")
