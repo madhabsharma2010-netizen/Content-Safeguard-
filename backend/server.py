@@ -867,7 +867,6 @@ async def analyze_content(request: ContentAnalysisRequest):
     return await ultra_analyze_content(request)
 
 # Additional existing endpoints remain the same but enhanced...
-from server import AdvancedFilterSettings
 
 @app.post("/api/advanced-filter-settings")
 async def save_advanced_filter_settings(settings: AdvancedFilterSettings):
