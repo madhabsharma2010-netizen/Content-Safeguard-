@@ -83,6 +83,21 @@ class UltraAccurateAnalysisResult(BaseModel):
     risk_assessment: Dict[str, Any]
     timestamp: datetime
 
+class AdvancedFilterSettings(BaseModel):
+    user_id: str
+    categories: Dict[str, bool]
+    strictness_level: str = "moderate"
+    custom_keywords: List[str] = []
+    whitelist_domains: List[str] = []
+    blacklist_domains: List[str] = []
+    auto_scan_enabled: bool = True
+    notification_enabled: bool = True
+    time_limits: Dict[str, int] = {
+        "daily_scan_limit": 1000,
+        "hourly_scan_limit": 100,
+        "analysis_timeout": 30
+    }
+
 # Multi-model analysis for ultra accuracy
 async def cross_validate_with_multiple_models(content: str, content_type: str, user_settings: Any) -> Dict[str, Any]:
     """Use multiple AI models for cross-validation to achieve 95%+ accuracy"""
